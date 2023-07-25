@@ -24,7 +24,7 @@ public class PlayerController {
     @GetMapping(path = "{id}")
     public Player getSpecificPlayer(@PathVariable(name = "id") String id) {
         Player playerFound = null;
-        if (Strings.isNotBlank(id)){
+        if (Strings.isNotBlank(id)) {
             playerFound = playerService.getSpecificPlayer(id);
         }
         return playerFound;

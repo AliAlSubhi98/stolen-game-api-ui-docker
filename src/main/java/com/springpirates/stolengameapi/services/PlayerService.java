@@ -24,7 +24,7 @@ public class PlayerService {
         Player foundPlayer = null;
         Optional<Player> optionalPlayer = playerRepository.findById(playerId);
 
-        if(optionalPlayer.isPresent()) {
+        if (optionalPlayer.isPresent()) {
             foundPlayer = optionalPlayer.get();
         }
         return foundPlayer;
@@ -42,7 +42,7 @@ public class PlayerService {
 
     public Player deletePlayer(@PathVariable(name = "id") String id) {
         Player existingPlayer = getSpecificPlayer(id);
-        if(existingPlayer != null) {
+        if (existingPlayer != null) {
             playerRepository.delete(existingPlayer);
         }
         return existingPlayer;
